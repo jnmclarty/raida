@@ -34,9 +34,10 @@ WC - an account you control with ample raiblocks
 RX - an account you do not control with or without a balance
 
 
-1. Choose one random integer, n, greater than or equal to 1 and less than 15.
-2. Choose one random integer, m, greater than or equal to 1 and less than 11.
-3. Solve for a data-channel d, equal to round(pi * (10^m) * n, 0)
+0. Choose one irrational number, r, from the set of pi, e or root 2.
+1. Choose one random integer, n, from the set of integers from 1 to 19 excluding 10.
+2. Choose one random integer, m, from the set of integers from 2 to 10.
+3. Solve for a data-channel d, equal to round(r * (10^m) * n, 0)
 4. Set frequency band, send d rai from WC to RX.
 5. Optionally, Choose payload packet mode, p
    1. 1 if byte (1-256)
@@ -113,3 +114,9 @@ WCA314 AB1 AB74 AB101 BA102 AB102 BA4 BA172
 The BA172 is effectively ignored.
 
 ```
+
+# FAQ
+
+1. What's with the Frequency Band Selection? pi?
+
+The vision here is that indexing raiblock clients will look for receives that are part of an future-proof infinitely scalable set only constrained by the rai supply.  This set is defined as something easy to derive and implement in any programming language as well as fairly quick to search against.  The exact set is still a WIP, but the idea is that these will work like AM/FM radio stations, except a client could scan more (or all to a logical ceiling) at a time.  With the parameters as defined, there are exactly 432 unique stations, which can individually be communicated to other humans such as "4-10-pi" or "2-7-root-2".  These numbers were selected because they shouldn't overlap with values that are likely more common such as numbers under 100, an ASCII character, or multiples of round numbers, are relatively low and don't overlap on themselves.  Prime numbers were also considered, but ruled out on the fact that the set it harder to derive.

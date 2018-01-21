@@ -39,13 +39,13 @@ RX - an account you do not control with or without a balance
 3. Solve for a data-channel d, equal to round(pi * (10^m) * n, 0)
 4. Set frequency band, send d rai from WC to RX.
 5. Optionally, Choose payload packet mode, p
-   1. if byte (1-256)
-   2. if word (2 bytes) (1-65536)
-   3. if doubleword (4 bytes) (1-4294967296)
-   4. if quadword (8 bytes) (1-18446744073709551616)
-   5. if dynamic (reader introspects) (1-total supply of rai)
-   6. if number (succinct invoice requests)
-   7. to 99. are reserved
+   1. 1 if byte (1-256)
+   2. 2 if word (2 bytes) (1-65536)
+   3. 3 if doubleword (4 bytes) (1-4294967296)
+   4. 4 if quadword (8 bytes) (1-18446744073709551616)
+   5. 5 if dynamic (reader introspects) (1-total supply of rai)
+   6. 6 if number (succinct invoice requests)
+   7. 7 to 99. are reserved
 6. Optionally, Choose an End-of-Transmission value, e, as any value not included in the transmission or one included rarely (requires escaping).  Recommendation is the value 4 (ASCII "EOT"). Unset the protocol treats it as the default 4.
 7. Optionally, Choose an Escape value, s, as any value not included in the transmission or one included rarely.  Recommendation is the value 27 (ASCII "Escape").  Unset defaults to 0 and then effectively disables the transmission of the EOT value; which is the only thing it would need to escape, other than itself.
 8. Optionally, Send (s x 1000) + (e x 100) + p from WC to RX. Examples:
